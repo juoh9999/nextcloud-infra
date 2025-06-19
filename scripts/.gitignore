@@ -1,0 +1,15 @@
+# Terraform 상태 파일
+*.tfstate
+*.tfstate.backup
+
+# 자동 생성된 k8s 파일
+k8s/deployment.yml
+k8s/ingress.yml
+
+# 시스템 파일
+.DS_Store
+
+# 환경 설정 파일
+.env
+
+.terraform/

@@ -1,0 +1,13 @@
+# k8s/ssl-redirect-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ssl-redirect
+spec:
+  ports:
+    - name: use-annotation
+      port: 80
+      targetPort: 80
+  selector:
+    app: dummy  # 실제로 이 selector는 사용되지 않음
+

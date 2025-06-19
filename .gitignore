@@ -1,0 +1,24 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Kubernetes
+k8s/rendered/
+
+# IDE
+*.swp
+*.swo
+.vscode/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# Node/Python
+node_modules/
+__pycache__/
+.env
+
