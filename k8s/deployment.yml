@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextcloud-deployment
+  labels:
+    app: nextcloud
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nextcloud
+  template:
+    metadata:
+      labels:
+        app: nextcloud
+    spec:
+      containers:
+      - name: nextcloud
+        image: <ECR_URL>:latest  # 👈 GitHub Actions에서 자동으로 교체됨
+        ports:
+        - containerPort: 80
+        env:
+        - name: NEXTCLOUD_ADMIN_USER
+          valueFrom:
+            secretKeyRef:
+              name: nextcloud-secret
+              key: admin_user
+        - name: NEXTCLOUD_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: nextcloud-secret
+              key: admin_password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextcloud-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: nextcloud
+  ports:
+    - port: 80
+      targetPort: 80
+

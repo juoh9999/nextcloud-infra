@@ -9,9 +9,11 @@ private_subnet_cidrs     = ["10.0.101.0/24", "10.0.102.0/24"]
 domain_name              = "pomeranian99.click"
 hosted_zone_id           = "Z05081623RS0Y14LJ701X"
 cloudfront_domain_name   = "d3n7n1y9myuf89.cloudfront.net"
-cloudfront_zone_id       = "E11P25K8YOBZBH"
+cloudfront_zone_id       = "Z2FDTNDATAQYW2"
 eks_cluster_name         = "nextcloud-eks"
+eks_node_group_name      = "nextcloud-ng"
 s3_bucket_name           = "nextcloud9999"
+eks_node_group_role_arn = "arn:aws:iam::585685714619:role/default-eks-node-group-20250623053957718900000003"
 region = "ap-northeast-2"  # 서울 리전
 # ✅ terraform.tfvars (추가 포함)
 rds_identifier = "nextcloud"

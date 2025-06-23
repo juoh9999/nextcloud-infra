@@ -42,8 +42,7 @@ module "rds" {
 
 
 module "eks" {
-  source          = "terraform-aws-modules/eks/aws"
-  version         = "18.30.2"
+  source          = "./modules/eks"
 
   cluster_name    = var.eks_cluster_name
   cluster_version = "1.28"
@@ -58,6 +57,7 @@ module "eks" {
       min_capacity     = 1
       instance_types   = ["t3.medium"]
       key_name         = var.key_name
+      iam_role_arn     = var.eks_node_group_role_arn
     }
   }
 

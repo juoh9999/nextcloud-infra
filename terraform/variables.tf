@@ -63,10 +63,17 @@ variable "eks_cluster_name" {
 }
 
 # ※ 사용되지 않는 경우 삭제 가능
-# variable "eks_node_group_name" {
-#   description = "Name of the EKS node group"
-#   type        = string
-# }
+variable "eks_node_group_name" {
+  description = "Name of the EKS node group"
+  type        = string
+}
+
+variable "eks_node_group_role_arn" {
+  description = "IAM Role ARN for EKS Managed Node Group"
+  type        = string
+}
+
+
 
 # ✅ RDS 관련
 variable "rds_identifier" {

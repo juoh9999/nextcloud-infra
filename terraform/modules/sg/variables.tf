@@ -1,3 +1,6 @@
-# ✅ modules/sg/variables.tf
-variable "vpc_id" {}
+#modules/sg/variables.tf
+variable "vpc_id" {
+  description = "VPC ID"
+  type        = string
+}
 
